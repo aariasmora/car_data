@@ -1,0 +1,63 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+<f:flashMessages />
+
+	<h2>EPA DATA</h2>
+	<p>Search by attribute:</p>
+	<input class="form-control" id="myInput" type="text" placeholder="Search..">
+	<br>
+
+	<div class="table-responsive">
+		<table id="myTable" class="table-sm table-hover table-striped listTableOverride">
+			<thead>
+				<tr>
+					<th><button type="button" class="btn btn-sx" onclick="sortTable(0)"><span class="glyphicon glyphicon-sort-by-alphabet"></span> <f:translate key="tx_cardata_domain_model_car.manufacturer" /></button></th>
+					<th><button type="button" class="btn btn-sx" onclick="sortTable(1)"><span class="glyphicon glyphicon-sort-by-alphabet"></span> <f:translate key="tx_cardata_domain_model_car.model" /></button></th>
+					<th><button type="button" class="btn btn-sx" onclick="sortTable(2)"><span class="glyphicon glyphicon-sort-by-alphabet"></span> <f:translate key="tx_cardata_domain_model_car.year" /></button></th>
+					<th><button type="button" class="btn btn-sx" onclick="sortTable(3)"><span class="glyphicon glyphicon-sort-by-alphabet"></span> <f:translate key="tx_cardata_domain_model_car.class" /></button></th>
+					<th><button type="button" class="btn btn-sx" onclick="sortTable(4)"><span class="glyphicon glyphicon-sort-by-alphabet"></span> <f:translate key="tx_cardata_domain_model_car.fuel_type" /></button></th>
+					<th><button type="button" class="btn btn-sx" onclick="sortTable(4)"><span class="glyphicon glyphicon-sort-by-alphabet"></span> <f:translate key="tx_cardata_domain_model_car.savings" /></button></th>
+					<th><button type="button" class="btn btn-sx" onclick="sortTable(5)"><span class="glyphicon glyphicon-sort-by-alphabet"></span> <f:translate key="tx_cardata_domain_model_car.cylinders" /></button></th>
+					<th><button type="button" class="btn btn-sx" onclick="sortTable(6)"><span class="glyphicon glyphicon-sort-by-alphabet"></span> <f:translate key="tx_cardata_domain_model_car.city_m_p_g" /></button></th>
+					<th><button type="button" class="btn btn-sx" onclick="sortTable(7)"><span class="glyphicon glyphicon-sort-by-alphabet"></span> <f:translate key="tx_cardata_domain_model_car.highway_m_p_g" /></button></th>
+					<th><button type="button" class="btn btn-sx" onclick="sortTable(8)"><span class="glyphicon glyphicon-sort-by-alphabet"></span> <f:translate key="tx_cardata_domain_model_car.combined_m_p_g" /></button></th>
+					<th><button type="button" class="btn btn-sx" onclick="sortTable(9)"><span class="glyphicon glyphicon-sort-by-alphabet"></span> <f:translate key="tx_cardata_domain_model_car.fuel_cost" /></button></th>
+				</tr>
+			</thead>
+			<tbody id="myTableBody">
+			<f:for each="{cars}" as="car">
+				<tr>
+					<td><f:link.action action="show" arguments="{car : car}">{car.manufacturer}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{car : car}">{car.model}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{car : car}">{car.year}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{car : car}">{car.class}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{car : car}">{car.fuelType}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{car : car}">{car.savings}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{car : car}">{car.cylinders}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{car : car}">{car.cityMPG}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{car : car}">{car.highwayMPG}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{car : car}">{car.combinedMPG}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{car : car}">{car.fuelCost}</f:link.action></td>
+				</tr>
+			</f:for>
+			</tbody>
+		</table>
+	</div>
+<!--<f:link.action action="new">New Car</f:link.action>-->
+</f:section>
+
+</html>

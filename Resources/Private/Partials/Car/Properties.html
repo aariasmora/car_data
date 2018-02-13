@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<div class="table-responsive">
+		<table class="table-hover table-striped showTableOverride" >
+			<tr>
+				<th><f:translate key="tx_cardata_domain_model_car.manufacturer" /></th>
+				<th><f:translate key="tx_cardata_domain_model_car.model" /></th>
+				<th><f:translate key="tx_cardata_domain_model_car.year" /></th>
+				<th><f:translate key="tx_cardata_domain_model_car.class" /></th>
+			</tr>
+			<tr>
+				<td>{car.manufacturer}</td>
+				<td>{car.model}</td>
+				<td>{car.year}</td>
+				<td>{car.class}</td>
+			</tr>
+			<tr>
+				<th><f:translate key="tx_cardata_domain_model_car.fuel_type" /></th>
+				<th><f:translate key="tx_cardata_domain_model_car.savings" /></th>
+				<th><f:translate key="tx_cardata_domain_model_car.cylinders" /></th>
+			</tr>
+			<tr>
+				<td>{car.fuelType}</td>
+				<td>{car.savings}</td>
+				<td>{car.cylinders}</td>
+			</tr>
+			<tr>
+				<th><f:translate key="tx_cardata_domain_model_car.city_m_p_g" /></th>
+				<th><f:translate key="tx_cardata_domain_model_car.highway_m_p_g" /></th>
+				<th colspan="2"><f:translate key="tx_cardata_domain_model_car.combined_m_p_g" /></th>
+			</tr>
+			<tr>
+				<td>{car.cityMPG}</td>
+				<td>{car.highwayMPG}</td>
+				<td colspan="2">{car.combinedMPG}</td>
+			</tr>
+			<tr>
+				<th colspan="4"><f:translate key="tx_cardata_domain_model_car.fuel_cost" /></th>
+			</tr>
+			<tr>
+				<td>{car.fuelCost}</td>
+			</tr>
+		</table>
+	</div>
+</html>
